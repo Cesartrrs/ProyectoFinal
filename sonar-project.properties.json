@@ -1,5 +1,2 @@
 sonar.projectKey=sonarproject2
 sonar.login=sqp_b2435e919ab68e8e82f232fce8a6622a18a1d6f9
-sonar.password=sonarpass
-sonar.sources=/var/lib/jenkins/workspace/
-sonar.host.url=http://35.247.2.163:9000

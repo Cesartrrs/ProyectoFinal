@@ -8,22 +8,10 @@ node {
       sh "${scannerHome}/bin/sonar-scanner"
     }
   }
-}
-pipeline {
-  agent any
-
-  tools {nodejs "nodejs"}
-
-  stages {
-    stage('Unit Test') {
-      steps {
-        sh 'npm config ls'
-      }
+  stage ('Unit Test') {
+    def nodeHome = tool 'nodejs';
+    withnodeEnv() { 
+        sh "${nodejsHome}"/usr/bin/node 
     }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-    }
+  }
 }

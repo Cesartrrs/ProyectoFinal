@@ -9,9 +9,9 @@ node {
     }
   }
   stage ('Unit Test') {
-    def nodeHome = tool 'nodejs';
-    withnodeEnv() { 
-        sh "${nodejsHome}"/usr/bin/node 
-    }
+    def npmHome = tool 'nodejs';
+    withnpm() { 
+        sh "${npmHome}/usr/bin/node" 
+    }''
   }
 }

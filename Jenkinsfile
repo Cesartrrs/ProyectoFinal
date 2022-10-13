@@ -15,9 +15,15 @@ pipeline {
   tools {nodejs "nodejs"}
  
   stages {
-    stage('Unit Test') {
+    
+    stage ('Cloning Git') {
+      steps { 
+        git https://github.com/Cesartrrs/ProyectoFinal'
+      }
+  }
+    stage('Install dependencies') {
       steps {
-        sh 'npm config ls'
+        sh 'npm install'
       }
     }
         stage('Deploy') {

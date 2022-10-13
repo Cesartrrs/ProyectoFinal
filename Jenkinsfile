@@ -18,7 +18,7 @@ pipeline {
     
     stage ('Cloning Git') {
       steps { 
-        git 'https://github.com/Cesartrrs/ProyectoFinal/cidr_convert_api/node'
+        git 'https://github.com/Cesartrrs/ProyectoFinal'
       }
   }
     stage('Install dependencies') {

@@ -18,6 +18,7 @@ pipeline {
     stage('Unit Test') {
       steps {
         sh 'npm config ls'
+        sh 'npm start'
       }
     }
         stage('Deploy') {

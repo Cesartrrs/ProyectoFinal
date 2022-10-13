@@ -15,7 +15,7 @@ pipeline {
   tools {nodejs "nodejs"}
  
   stages {
-    stage('Example') {
+    stage('Unit Test') {
       steps {
         sh 'npm config ls'
       }

@@ -18,7 +18,7 @@ pipeline {
     
     stage ('Cloning Git') {
       steps { 
-        git https://github.com/Cesartrrs/ProyectoFinal'
+        git 'https://github.com/Cesartrrs/ProyectoFinal'
       }
   }
     stage('Install dependencies') {

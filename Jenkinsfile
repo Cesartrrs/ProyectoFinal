@@ -29,7 +29,7 @@ pipeline {
     stage('test') {
       steps {
         sh 'npm config ls'
-        sh 'cd /var/lib/jenkins/workspace/projectaccenture2/cidr_convert_api/node
+        sh 'cd /var/lib/jenkins/workspace/projectaccenture2/cidr_convert_api/node'
         sh './node_modules/mocha/bin/mocha.js'
         sh 'npm test'
       }

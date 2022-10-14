@@ -26,7 +26,7 @@ pipeline {
         sh 'npm install'
       }
     }
-    stages 
+    stages ('unit test')
     {agent { node { label 'mocha-bdd' } } }{
 		stage('Install dependencies') {
 			steps {

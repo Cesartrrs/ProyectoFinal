@@ -29,6 +29,7 @@ pipeline {
     stage('test') {
       steps {
         sh 'npm config ls'
+        sh './var/lib/jenkins/workspace/projectaccenture2/cidr_convert_api/node'
         sh 'npm test'
       }
     }

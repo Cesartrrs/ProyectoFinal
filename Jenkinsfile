@@ -29,7 +29,7 @@ pipeline {
     stage('test') {
       steps {
         sh 'npm config ls'
-        sh './node_modules/mocha/bin/mocha'
+        sh './node_modules/mocha/bin/mocha.js'
         sh 'npm test'
       }
     }

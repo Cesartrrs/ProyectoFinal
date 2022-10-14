@@ -32,7 +32,7 @@ pipeline {
         sh 'npm install --global mocha'
         sh 'npm install --save-dev mocha'
         sh 'npm install mocha'
-        sh 'cd /var/lib/jenkins/workspace/projectaccenture2/cidr_convert_api/node
+        sh 'cd /var/lib/jenkins/workspace/projectaccenture2/cidr_convert_api/node'
         sh 'npm test'
       }
     }

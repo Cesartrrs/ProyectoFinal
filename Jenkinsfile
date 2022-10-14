@@ -10,51 +10,30 @@ node {
   }
 }
 pipeline {
-  agent {
-        docker {
-            image 'node:6-alpine' 
-            args '-p 3000:3000' 
-        }
-    }
-    stages {
-        stage('Build') { 
-            steps {
-                sh 'npm install' 
-            }
-        }
-    }
-  agent any 
- 
-  tools {nodejs "nodejs"}
- 
-  stages ('unit test') {
-  
-    stage ('Cloning Git') {
-      steps { 
-        git 'https://github.com/Cesartrrs/ProyectoFinal'
+  agent any
+    
+  tools {nodejs "node"}
+    
+  stages {
+        
+    stage('Git') {
+      steps {
+        git 'https://github.com/****/****'
       }
-  }
-    stage('Install dependencies') {
+    }
+     
+    stage('Build') {
       steps {
         sh 'npm install'
+         sh '<<Build Command>>'
       }
-    }
-  stage('Test') 
-  agent any
- 
-  tools {nodejs "nodejs"}
- 
-  stages {
-    stage('Unit Test') {
+    }  
+    
+            
+    stage('Test') {
       steps {
-        sh 'npm config ls'
+        sh 'node test'
       }
     }
   }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-    }
-  }
+}

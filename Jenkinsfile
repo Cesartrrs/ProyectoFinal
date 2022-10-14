@@ -32,6 +32,7 @@ pipeline {
         sh 'npm install --global mocha'
         sh 'npm install --save-dev mocha'
         sh 'npm install mocha'
+        sh './node_modules/mocha/bin/mocha'
         sh 'npm test'
       }
     }

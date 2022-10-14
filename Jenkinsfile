@@ -27,7 +27,7 @@ pipeline {
       }
     }
     stages 
-    agent { node { label 'mocha-bdd' } } {
+    {agent { node { label 'mocha-bdd' } } }{
 		stage('Install dependencies') {
 			steps {
 				sh 'npm install --verbose'

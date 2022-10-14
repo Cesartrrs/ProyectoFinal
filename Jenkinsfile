@@ -22,6 +22,7 @@ pipeline {
                 sh 'npm install' 
             }
         }
+    }
   agent any
  
   tools {nodejs "nodejs"}

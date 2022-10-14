@@ -23,7 +23,7 @@ pipeline {
             }
         }
     }
-  agent any
+  agent any  
   tools {nodejs "nodejs"}
   stages {
     stage('Unit Test') {
@@ -31,10 +31,10 @@ pipeline {
         sh 'npm config ls'
       }
     }
-        stage('Deploy') {
+  }
+    stage('Deploy') {
             steps {
                 echo 'Deploying....'
             }
         }
     }
-}

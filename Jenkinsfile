@@ -13,7 +13,7 @@ pipeline {
   agent any
   tools {nodejs "nodejs"}
   stages {
-    stage('preflight') {
+    stage('changes') {
       steps {
         echo sh(returnStdout: true, script: 'env')
         sh 'node -v'

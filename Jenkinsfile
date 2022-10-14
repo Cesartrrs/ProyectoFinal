@@ -27,8 +27,8 @@ pipeline {
  
   tools {nodejs "nodejs"}
  
-  stages {
-    
+  stages ('unit test')
+  
     stage ('Cloning Git') {
       steps { 
         git 'https://github.com/Cesartrrs/ProyectoFinal'
@@ -51,3 +51,4 @@ pipeline {
         }
     }
 }
+

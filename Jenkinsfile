@@ -29,7 +29,10 @@ pipeline {
     stage('test') {
       steps {
         sh 'npm config ls'
-        sh 'npm mocha'
+        sh 'npm install --global mocha'
+        sh 'npm install --save-dev mocha'
+        sh 'npm install mocha'
+        sh 'npm test'
       }
     }
   }

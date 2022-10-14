@@ -30,7 +30,7 @@ pipeline {
       steps {
         sh 'npm config ls'
         sh './node_modules/mocha/bin/mocha.js'
-        sh 'npm test cwd'
+        sh 'npm test'
       }
     }
   }

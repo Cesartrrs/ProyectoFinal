@@ -10,35 +10,26 @@ node {
   }
 }
 pipeline {
-  agent {
-        any {
-            image 'node:6-alpine' 
-            args '-p 3000:3000' 
-        }
-    }
-  stages {
-        stage('Build') { 
-            steps {
-                sh 'npm install' 
-            }
-        }
-    }
-}
-pipeline {
   agent any
- 
-  tools {nodejs "nodejs"}
- 
+  tools {nodejs "latest"}
   stages {
-    stage('Unit Test') {
+    stage('preflight') {
       steps {
-        sh 'npm config ls'
+        echo sh(returnStdout: true, script: 'env')
+        sh 'node -v'
       }
     }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+    stage('build') {
+      steps {
+        sh 'npm --version'
+        sh 'git log --reverse -1'
+        sh 'npm install'
+      }
     }
+    stage('test') {
+      steps {
+        sh 'npm test'
+      }
+    }
+  }
 }

@@ -29,7 +29,7 @@ pipeline {
     stage('test') {
       steps {
         sh 'npm config ls'
-        sh 'npm jest'
+        sh 'npm test node'
       }
     }
   }

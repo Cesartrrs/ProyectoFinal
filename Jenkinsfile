@@ -30,8 +30,7 @@ pipeline {
       steps {
         sh 'npm config ls'
         sh './node_modules/mocha/bin/mocha.js'
-        sh 'cd /var/lib/jenkins/workspace/projectaccenture2/cidr_convert_api/node'
-        sh 'npm test'
+        sh 'npm test cwd'
       }
     }
   }

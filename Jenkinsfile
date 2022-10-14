@@ -23,11 +23,11 @@ pipeline {
             }
         }
     }
-  agent any 
+  agent {any} 
  
   tools {nodejs "nodejs"}
  
-  stages ('unit test') {
+  stages {
   
     stage ('Cloning Git') {
       steps { 
